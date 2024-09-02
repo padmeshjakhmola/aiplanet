@@ -5,9 +5,9 @@ import detailtextline from "@/public/assets/icons/detailtextline.svg";
 import ai from "@/public/assets/icons/ai.svg";
 import Group_1000002516 from "@/public/assets/icons/Group_1000002516.svg";
 import Group_1000002518 from "@/public/assets/icons/Group_1000002518.svg";
-import { Button } from "@mui/material";
 import { WebsiteProductDetailsProps } from "@/types";
 import { inter, poppins } from "@/app/fonts";
+import { Button } from "../ui/button";
 
 const WebsiteProductDetails = ({
   image,
@@ -72,9 +72,8 @@ const InitialPage = () => {
               datasets allowing you to foster learning through competitions.
             </p>
             <Button
-              variant="contained"
-              size="large"
-              className={`${poppins.className} rounded-lg bg-white text-blue-1 capitalize text-lg font-bold py-2.5`}
+              size="lg"
+              className={`${poppins.className} rounded-xl bg-white hover:bg-slate-200 text-blue-1 capitalize text-lg font-bold py-6 px-5`}
             >
               Create Challenge
             </Button>

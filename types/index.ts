@@ -4,3 +4,9 @@ export interface WebsiteProductDetailsProps {
   subheading: string;
   border?: boolean;
 }
+
+export interface AiChallangeCardProps {
+  image: string;
+  heading: string;
+  description: string;
+}
