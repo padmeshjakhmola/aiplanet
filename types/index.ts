@@ -14,6 +14,7 @@ export interface AiChallangeCardProps {
 }
 
 export interface CustomCardProps {
+  id: string;
   image: StaticImageData;
   status: string;
   title: string;

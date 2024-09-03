@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Card,
   CardContent,
@@ -10,8 +12,10 @@ import { Button } from "./ui/button";
 import participate from "@/public/assets/icons/participate.svg";
 import Image from "next/image";
 import { CustomCardProps } from "@/types";
+import { useRouter } from "next/navigation";
 
 const CustomCard = ({
+  id,
   image,
   status,
   title,
@@ -20,6 +24,7 @@ const CustomCard = ({
   hours,
   mins,
 }: CustomCardProps) => {
+  const router = useRouter();
   const getStatusClassName = () => {
     switch (status) {
       case "Upcoming":
@@ -31,6 +36,10 @@ const CustomCard = ({
       default:
         return "bg-gray-100 text-gray-600";
     }
+  };
+
+  const handleParticipateClick = () => {
+    router.push(`/participate/${id}`);
   };
   return (
     <div>
@@ -76,7 +85,10 @@ const CustomCard = ({
           </div>
         </CardContent>
         <CardFooter className="flex items-center justify-center">
-          <Button className="bg-green-2 hover:bg-green-900 rounded-lg pr-6 py-5">
+          <Button
+            className="bg-green-2 hover:bg-green-900 rounded-lg pr-6 py-5"
+            onClick={handleParticipateClick}
+          >
             <Image
               src={participate}
               width={15}
