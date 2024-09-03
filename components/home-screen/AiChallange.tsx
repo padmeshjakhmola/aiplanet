@@ -1,8 +1,8 @@
 import Image from "next/image";
-import carbon_notebook_reference from "../../public/assets/icons/carbon_notebook_reference.svg";
-import Vector from "../../public/assets/icons/Vector.svg";
-import Robot from "../../public/assets/icons/Robot.svg";
-import IdentificationCard from "../../public/assets/icons/IdentificationCard.svg";
+import carbon_notebook_reference from "@/public/assets/icons/carbon_notebook_reference.svg";
+import Vector from "@/public/assets/icons/Vector.svg";
+import Robot from "@/public/assets/icons/Robot.svg";
+import IdentificationCard from "@/public/assets/icons/IdentificationCard.svg";
 import { AiChallangeCardProps } from "@/types";
 
 const AiChallangeCard = ({
