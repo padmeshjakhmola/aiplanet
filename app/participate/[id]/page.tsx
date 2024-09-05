@@ -1,11 +1,15 @@
+"use client";
+
 import { tempData } from "@/constants/tempdata";
 import Image from "next/image";
 import clock from "@/public/assets/icons/clock.svg";
 import eventlevel from "@/public/assets/icons/eventlevel.svg";
 import { Button } from "@/components/ui/button";
 import { inter } from "@/app/fonts";
+import { useRouter } from "next/navigation";
 
 export default function Page({ params }: { params: { id: string } }) {
+  const router = useRouter();
   const eventData = tempData.find((event) => event.id === params.id);
 
   if (!eventData) {
@@ -13,6 +17,10 @@ export default function Page({ params }: { params: { id: string } }) {
       <div className="flex justify-center items-center">Event not found</div>
     );
   }
+
+  const handleCreate = () => {
+    router.push(`/create/${eventData.id}`);
+  };
 
   return (
     <>
@@ -57,11 +65,14 @@ export default function Page({ params }: { params: { id: string } }) {
           Overview
         </p>
         <div className="space-x-5">
-          <Button className={`bg-green-2 text-white pr-6 rounded-xl px-8 py-5`}>
+          <Button
+            className={`bg-green-2 hover:bg-green-800 text-white pr-6 rounded-xl px-8 py-5`}
+            onClick={handleCreate}
+          >
             Edit
           </Button>
           <Button
-            className={`text-red-600 pr-6 rounded-xl px-5 py-5 border-red-600`}
+            className={`text-red-600 pr-6 rounded-xl px-5 py-5 border-red-600 hover:text-red-800 hover:bg-white`}
             variant="outline"
           >
             Delete
