@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import rocket from "@/public/assets/icons/rocket.svg";
 import textborder from "@/public/assets/icons/textline.svg";
@@ -8,6 +10,7 @@ import Group_1000002518 from "@/public/assets/icons/Group_1000002518.svg";
 import { WebsiteProductDetailsProps } from "@/types";
 import { inter, poppins } from "@/app/fonts";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const WebsiteProductDetails = ({
   image,
@@ -46,6 +49,8 @@ const WebsiteProductDetails = ({
 };
 
 const InitialPage = () => {
+  const router = useRouter();
+
   return (
     <main className="bg-blue-1">
       <div className="mx-36 py-36 flex space-x-96 px-8">
@@ -74,6 +79,7 @@ const InitialPage = () => {
             <Button
               size="lg"
               className={`${poppins.className} rounded-xl bg-white hover:bg-slate-200 text-blue-1 capitalize text-lg font-bold py-6 px-5`}
+              onClick={() => router.push("/create/0")}
             >
               Create Challenge
             </Button>

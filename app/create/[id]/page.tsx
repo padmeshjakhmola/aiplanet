@@ -48,6 +48,13 @@ export default function Create({ params }: { params: { id: string } }) {
           rows={10}
         />
       </div>
+      {/* Image */}
+      <div className="px-24 space-y-6 pb-8 w-full max-w-lg items-center">
+        {/* <div className="grid w-full max-w-sm items-center gap-1.5"> */}
+          <p>Image</p>
+          <Input id="picture" type="file" />
+        {/* </div> */}
+      </div>
       <div className="px-24 max-w-[40%] space-y-6 pb-8">
         <p>Level Type</p>
         <DropdownMenu>
